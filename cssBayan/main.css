@@ -1,0 +1,75 @@
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: rgb(196, 192, 206);
+    margin: 0;
+    padding: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    max-width: 800px;
+    margin: 10px auto;  
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .accordion_label{
+      cursor: pointer;
+    }
+
+  .accordion {
+    border-top: 1px solid #ba69e9;
+  }
+  
+  .accordion_input {
+    display: none;
+  }
+  
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .content {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+  }
+  .icon {
+    transform: rotate(0);
+
+  }
+
+  .meme {
+    width: 0;
+    height: 0;
+    transition: width 1.2s, height 1.2s;
+    transition-timing-function: ease-in;
+  }
+  
+  .accordion_input:checked + .accordion_label .content .meme {
+    width: 256px;
+    height: 256px;
+    margin-bottom: 20px;
+  }
+
+  .heading:hover + .content .meme, .content:hover .meme
+    {
+      width: 256px;
+      height: 256px;
+      margin-bottom: 10px;
+    }
+
+  .accordion_label:hover .heading .icon {
+    transform: rotate(180deg);
+    transition: 1.5s;
+  }
+  
+    .accordion_input:checked + .accordion_label .heading {
+      color: #ba69e9;
+    }
+    .accordion:hover .heading {
+      color:  #ba69e9;
+    } 
+  }   
